@@ -78,6 +78,4 @@ robbie = Salary('Robbie', 2000, 1500, 1)
 ariel = Contract('Ariel', 30, 120, 600, 1)
 
 
-test = str(robbie)
-print(test)
 
