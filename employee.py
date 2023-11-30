@@ -25,10 +25,11 @@ class Salary(Employee):
             return self.salary + (self.contract*self.commision)
     
     def __str__(self):
+        total = self.salary + (self.commision * self.contract)
         if self.commision and self.contract == 0:
-            return str(self.name,"works on a monthly salary of "+self.salary+". Their total pay is "+self.salary)
+            return str(self.name),"works on a monthly salary of "+str(self.salary)+". Their total pay is "+str(self.salary)
         else:
-            return str(self.name,"works on a monthly salary of "+self.salary+" and receives a commision for "+self.contract+" contract(s) at "+self.commision+"/contract. Their total pay is "+self.salary)
+            return str(self.name),"works on a monthly salary of "+str(self.salary)+" and receives a commision for "+str(self.contract)+" contract(s) at "+str(self.commision)+"/contract. Their total pay is "+str(total)
 
 class Contract(Employee):
     def __init__(self, name, rate, hours, commision, contract):
@@ -43,10 +44,11 @@ class Contract(Employee):
             return self.rate*self.hours + self.commision*self.contract
     
     def __str__(self):
+        total = (self.rate*self.hours + self.commision*self.contract)
         if self.commision and self.contract == 0:
-            return str(self.name,"works on a contract of "+self.hours+" hours at "+self.rate+"/hour. Their total pay is "+self.rate*self.hours)
+            return str(self.name),"works on a contract of "+str(self.hours)+" hours at "+str(self.rate)+"/hour. Their total pay is "+str(total)
         else:
-            return str(self.name+" works on a contract of "+self.hours+" hours at "+self.rate+"/hour and receives a commission for "+self.contract+" contract(s) at "+self.commision+"/contract. Their total pay is "+(self.rate*self.hours + self.contract*self.commision))
+            return self.self.name+" works on a contract of "+str(self.hours)+" hours at "+str(self.rate)+"/hour and receives a commission for "+str(self.contract)+" contract(s) at "+str(self.commision)+"/contract. Their total pay is "+str(total)
     
 
 
