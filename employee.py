@@ -27,11 +27,11 @@ class Salary(Employee):
     def __str__(self):
         total = self.salary + (self.commision * self.contract)
         if self.commision == 0 and self.contract == 0:
-            return f"{self.name} works on a monthly salary of {self.salary}.\s+Their total pay is {self.salary}.$"
+            return f"{self.name} works on a monthly salary of {self.salary}.  Their total pay is {self.salary}."
         elif self.contract == 1:
-            return f"{self.name} works on a monthly salary of {self.salary} and receives a bonus commision of {self.commision}.\s+Their total pay is {total}.$" 
+            return f"{self.name} works on a monthly salary of {self.salary} and receives a bonus commision of {self.commision}.  Their total pay is {total}." 
         else:
-            return f"{self.name} works on a monthly salary of {self.salary} and receives a commision for {self.contract} contract(s) at {self.commision}/contract.\s+Their total pay is {total}.$"
+            return f"{self.name} works on a monthly salary of {self.salary} and receives a commision for {self.contract} contract(s) at {self.commision}/contract.  Their total pay is {total}."
 
 class Contract(Employee):
     def __init__(self, name, rate, hours, commision, contract):
@@ -48,11 +48,11 @@ class Contract(Employee):
     def __str__(self):
         total = (self.rate*self.hours + self.commision*self.contract)
         if self.commision == 0 and self.contract == 0:
-            return f"{self.name} works on a contract of {self.hours} hours at {self.rate}/hour.\s+Their total pay is {total}.$"
+            return f"{self.name} works on a contract of {self.hours} hours at {self.rate}/hour.  Their total pay is {total}."
         elif self.contract == 1:
-            return f"{self.name} works on a contract of {self.hours} hours at {self.rate}/hour and receives a bonus commission of {self.commision}.\s+Their total pay is {total}.$"
+            return f"{self.name} works on a contract of {self.hours} hours at {self.rate}/hour and receives a bonus commission of {self.commision}.  Their total pay is {total}."
         else:
-            return f"{self.name} works on a contract of {self.hours} hours at {self.rate}/hour and receives a commission for {self.contract} contract(s) at {self.commision}/contract.\s+Their total pay is {total}.$"
+            return f"{self.name} works on a contract of {self.hours} hours at {self.rate}/hour and receives a commission for {self.contract} contract(s) at {self.commision}/contract.  Their total pay is {total}."
     
 
 
@@ -75,5 +75,5 @@ robbie = Salary('Robbie', 2000, 1500, 1)
 ariel = Contract('Ariel', 30, 120, 600, 1)
 
 
-test = str(robbie)
+test = str(ariel)
 print(test)
