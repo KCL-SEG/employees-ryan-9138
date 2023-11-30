@@ -28,6 +28,11 @@ class Salary(Employee):
         total = self.salary + (self.commision * self.contract)
         if self.commision == 0 and self.contract == 0:
             return (str(self.name)+" works on a monthly salary of "+str(self.salary)+". Their total pay is "+str(self.salary))
+        elif self.contract == 1:
+            return str(self.name)+" works on a monthly salary of "+str(self.salary)+" and receives a bonus commision of "+str(self.commision)+". Their total pay is "+str(total)
+
+            
+            
         else:
             return str(self.name)+" works on a monthly salary of "+str(self.salary)+" and receives a commision for "+str(self.contract)+" contract(s) at "+str(self.commision)+"/contract. Their total pay is "+str(total)
 
@@ -47,6 +52,8 @@ class Contract(Employee):
         total = (self.rate*self.hours + self.commision*self.contract)
         if self.commision == 0 and self.contract == 0:
             return str(self.name)+" works on a contract of "+str(self.hours)+" hours at "+str(self.rate)+"/hour. Their total pay is "+str(total)
+        elif self.contract == 1:
+            return str(self.name)+" works on a contract of "+str(self.hours)+" hours at "+str(self.rate)+"/hour and receives a bonus commission of "+str(self.commision)+". Their total pay is "+str(total)
         else:
             return str(self.name)+" works on a contract of "+str(self.hours)+" hours at "+str(self.rate)+"/hour and receives a commission for "+str(self.contract)+" contract(s) at "+str(self.commision)+"/contract. Their total pay is "+str(total)
     
@@ -71,6 +78,6 @@ robbie = Salary('Robbie', 2000, 1500, 1)
 ariel = Contract('Ariel', 30, 120, 600, 1)
 
 
-test = str(renee)
+test = str(robbie)
 print(test)
 
